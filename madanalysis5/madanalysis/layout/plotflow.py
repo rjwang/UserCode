@@ -438,7 +438,7 @@ class PlotFlow:
            stack.GetYaxis().SetTitleSize(0.04)
         else:
            stack.GetYaxis().SetTitleSize(0.06)
-        stack.GetYaxis().SetTitleFont(42)
+        stack.GetYaxis().SetTitleFont(22)
         stack.GetYaxis().SetLabelSize(0.04)
 
         # Setting X axis label
@@ -450,7 +450,7 @@ class PlotFlow:
         # Setting X axis label
         stack.GetXaxis().SetTitle(axis_titleX)
         stack.GetXaxis().SetTitleSize(0.06)
-        stack.GetXaxis().SetTitleFont(42)
+        stack.GetXaxis().SetTitleFont(22)
         stack.GetXaxis().SetLabelSize(0.04)
 
         # Setting Log scale
@@ -461,18 +461,16 @@ class PlotFlow:
         
         # Displaying a legend
         if len(self.main.datasets)>1:
-            ymin_legend = .88-.055*len(histos)
+            ymin_legend = .9-.055*len(histos)
             if ymin_legend<0.1:
                 ymin_legend = 0.1
-            legend = TLegend(.65,ymin_legend,.88,.88)
+            legend = TLegend(.65,ymin_legend,.9,.9)
             legend.SetTextSize(0.05); 
-            legend.SetTextFont(42); 
+            legend.SetTextFont(22); 
             for ind in range(0,len(histos)):
-                legend.AddEntry(histos[ind],PlotFlow.NiceTitle(self.main.datasets[ind].title),"L")
+                legend.AddEntry(histos[ind],PlotFlow.NiceTitle(self.main.datasets[ind].title))
             legend.SetFillColor(0)    
-	    legend.SetFillStyle(0)
-	    legend.SetLineColor(0)
-            legend.Draw("same")
+            legend.Draw()
 
         if not preview:
 
@@ -509,11 +507,7 @@ class PlotFlow:
 
             # Save the canvas in the C format
             canvas.SaveAs(output_path+"/selection_"+str(irelhisto)+".C")
-
-            # Save the canvas in the pdf format
-            canvas.SaveAs(output_path+"/selection_"+str(irelhisto)+".pdf")
-
-           
+            
         else:
             # break 
             answer=raw_input("Press enter to continue : ")

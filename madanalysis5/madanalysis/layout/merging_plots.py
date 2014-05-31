@@ -230,13 +230,13 @@ class MergingPlots:
            stack.GetYaxis().SetTitleSize(0.04)
         else:
            stack.GetYaxis().SetTitleSize(0.06)
-        stack.GetYaxis().SetTitleFont(42)
+        stack.GetYaxis().SetTitleFont(22)
         stack.GetYaxis().SetLabelSize(0.04)
 
         # Setting X axis label
         stack.GetXaxis().SetTitle("log10(DJR"+str(index)+")")
         stack.GetXaxis().SetTitleSize(0.06)
-        stack.GetXaxis().SetTitleFont(42)
+        stack.GetXaxis().SetTitleFont(22)
         stack.GetXaxis().SetLabelSize(0.04)
 
         # Setting Log scale
@@ -249,7 +249,7 @@ class MergingPlots:
             ymin_legend = 0.1
         legend = TLegend(.65,ymin_legend,.9,.9)
         legend.SetTextSize(0.04); 
-        legend.SetTextFont(42);
+        legend.SetTextFont(22);
         legend.AddEntry(DJRplots[0].myhisto,"Sum")
         for ind in range(1,len(DJRplots)):
             legend.AddEntry(DJRplots[ind].myhisto,str(ind-1)+"-jet sample")

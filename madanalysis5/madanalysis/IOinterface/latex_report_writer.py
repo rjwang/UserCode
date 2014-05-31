@@ -51,8 +51,7 @@ class LATEXReportWriter(TextFileWriter.TextFileWriter):
         if pdflatex==False:
             self.ext='.eps'
         else:
-            #self.ext='.png'
-	    self.ext='.pdf'
+            self.ext='.png'
 
         if os.path.isfile(stylepath+'/jheppub.sty'):
             os.system('cp ' + stylepath + '/jheppub.sty ' + dirname)
@@ -88,8 +87,7 @@ class LATEXReportWriter(TextFileWriter.TextFileWriter):
 
     def WriteTitle(self,title):
         self.file.write('\\title{{\\includegraphics[scale=.4]{')
-        #self.file.write('logo'+self.ext+'}}\\ The LaTeX report}\n\n')
-	self.file.write('logo.png'+'}}\\ The LaTeX report}\n\n')
+        self.file.write('logo'+self.ext+'}}\\ The LaTeX report}\n\n')
         try:
             mydate = str(time.strftime("%d %B %Y, %H:%M:%S"))
         except:
