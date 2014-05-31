@@ -8,6 +8,7 @@
 LSFJOB*
 # no python compiled files:
 *pyc
+.ma5history
 # no python init file
 python/__init__.py
 
