@@ -1,0 +1,6 @@
+Date : 2014/05/19
+Time : 09:21:22
+MA5 version : 
+Bazaar rev      : 76
+Bazaar last tag :  [ rev  ]
+tarball created by fuks
