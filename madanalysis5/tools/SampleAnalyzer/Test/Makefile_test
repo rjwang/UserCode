@@ -7,7 +7,7 @@ CXX = g++
 
 # Options for compilation
 CXXFLAGS = -Wall -O3 -I$(MA5_BASE)/tools/ -I/usr/local/include/root -DZIP_USE -DROOT_USE -DDELPHES_USE -DROOT_USE -DFASTJET_USE
-LIBFLAGS = -L/usr/local/lib/root -lGpad -lHist -lGraf -lGraf3d -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lEG -lRIO -lNet -lThread -lCore -lCint -pthread -lm -ldl -rdynamic -L$(MA5_BASE)/tools/SampleAnalyzer/Lib/ -lSampleAnalyzer -L/usr/lib -lz -lzlib_for_ma5 -L/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes/ -lDelphes -ldelphes_for_ma5 $(shell fastjet-config --libs --plugins --rpath=no) -lfastjet_for_ma5
+LIBFLAGS = -L/usr/local/lib/root -lGpad -lHist -lGraf -lGraf3d -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lEG -lRIO -lNet -lThread -lCore -lCint -pthread -lm -ldl -rdynamic -L$(MA5_BASE)/tools/SampleAnalyzer/Lib/ -lSampleAnalyzer -L/usr/lib -lz -lzlib_for_ma5 -L/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes/ -lDelphes -ldelphes_for_ma5 $(shell fastjet-config --libs --plugins --rpath=no) -lfastjet_for_ma5
 
 # Files to process
 SRCS  = $(wildcard Test.cpp)

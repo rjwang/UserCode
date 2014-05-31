@@ -4,7 +4,7 @@
 
 # Options for C++ compilation
 CXX = g++
-CXXFLAGS = -Wall -O3 -DROOT_USE -fPIC -I/usr/local/include/root -I./../../ -I/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes/ -I/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes/external/
+CXXFLAGS = -Wall -O3 -DROOT_USE -fPIC -I/usr/local/include/root -I./../../ -I/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes/ -I/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes/external/
 # Files
 SRCS = $(wildcard delphes/*.cpp)
 HDRS = $(wildcard delphes/*.h)

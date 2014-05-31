@@ -11,23 +11,23 @@ set NORMAL = "\033[0;39m"
 
 # Configuring PATH environment variable
 if ( $?PATH ) then
-setenv PATH "$PATH":/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/bin
+setenv PATH "$PATH":/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/fastjet/bin
 else
-setenv PATH /Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/bin
+setenv PATH /Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/fastjet/bin
 endif
 
 # Configuring LD_LIBRARY_PATH environment variable
 if ( $?LD_LIBRARY_PATH ) then
-setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes
+setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes
 else
-setenv LD_LIBRARY_PATH /Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes
+setenv LD_LIBRARY_PATH /Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes
 endif
 
 # Configuring DYLD_LIBRARY_PATH environment variable
 if ( $?DYLD_LIBRARY_PATH ) then
-setenv DYLD_LIBRARY_PATH "$DYLD_LIBRARY_PATH":/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes
+setenv DYLD_LIBRARY_PATH "$DYLD_LIBRARY_PATH":/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes
 else
-setenv DYLD_LIBRARY_PATH /Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/delphes
+setenv DYLD_LIBRARY_PATH /Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/SampleAnalyzer/Lib:/usr/local/lib/root:/Users/Renjie/work_invHiggs/MadGraph_Study/MadAnalysis5/madanalysis5/tools/fastjet/lib:/usr/lib:/Users/Renjie/work_invHiggs/UserCode/madanalysis5/tools/delphes
 endif
 
 # Checking that all environment variables are defined
