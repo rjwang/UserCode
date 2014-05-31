@@ -263,7 +263,7 @@ MT = ObservableBase( name        = 'MT',
                      code_reco   = 'mt()',
                      cut_event     = True,
                      cut_candidate = True,
-                     tex           = 'M_{T}'
+                     tex           = '#it{M}_{T}'
                   )
 
 vMT  = MT
@@ -308,7 +308,7 @@ PT = ObservableBase( name        = 'PT',
                      code_reco   = 'pt()',
                      cut_event     = True,
                      cut_candidate = True,
-                     tex           = 'p_{T}'
+                     tex           = '#it{p}_{T}'
                   )
 
 vPT  = PT

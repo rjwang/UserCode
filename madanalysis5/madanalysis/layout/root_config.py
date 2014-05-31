@@ -45,19 +45,19 @@ class RootConfig:
 
         gStyle.SetLabelOffset(0.005,"X");
         gStyle.SetLabelSize(0.03,"X");
-        gStyle.SetLabelFont(22,"X");
+        gStyle.SetLabelFont(42,"X");
 
         gStyle.SetTitleOffset(.85,"X");
         gStyle.SetTitleSize(0.04,"X");
-        gStyle.SetTitleFont(22,"X");
+        gStyle.SetTitleFont(42,"X");
 
         gStyle.SetLabelOffset(0.005,"Y");
         gStyle.SetLabelSize(0.03,"Y");
-        gStyle.SetLabelFont(22,"Y");
+        gStyle.SetLabelFont(42,"Y");
 
         gStyle.SetTitleOffset(.98,"Y");
         gStyle.SetTitleSize(0.04,"Y");
-        gStyle.SetTitleFont(22,"Y");
+        gStyle.SetTitleFont(42,"Y");
 
         gStyle.SetStatColor(0);
         gStyle.SetStatBorderSize(0);
@@ -70,4 +70,9 @@ class RootConfig:
         gStyle.SetTitleBorderSize(0);
         gStyle.SetTitleAlign(13);
         gStyle.SetTextAlign(22);
+
+	gStyle.SetPadTickX(1);                         
+	gStyle.SetPadTickY(1);  
                                                                             
+
+
