@@ -1,4 +1,5 @@
 UserCode
 ========
 
-  git clone git@github.com:rjwang/UserCode.git
+	MadAnalysis 5
+
