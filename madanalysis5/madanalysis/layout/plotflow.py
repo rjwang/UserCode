@@ -161,6 +161,7 @@ class PlotFlow:
         from ROOT import TH1F
         from ROOT import THStack
         from ROOT import TLegend
+	from ROOT import TPaveText #RJ
         from ROOT import TCanvas
         from ROOT import TASImage
         from ROOT import TAttImage
@@ -458,7 +459,19 @@ class PlotFlow:
             canvas.SetLogx()
         if ref.logY and ntot != 0:
             canvas.SetLogy()
-        
+
+        #RJ
+        T = TPaveText(0.1,0.995,0.9,0.95,'NDC')
+        T.AddText('#bf{CMS} Simulation')
+        T.SetTextFont(42)
+        T.Draw("same")
+        T.SetBorderSize(0)
+        T.SetFillColor(0)
+        T.SetFillStyle(0)
+        T.SetLineColor(0)
+        T.SetTextAlign(22)        
+
+
         # Displaying a legend
         if len(self.main.datasets)>1:
             ymin_legend = .88-.055*len(histos)

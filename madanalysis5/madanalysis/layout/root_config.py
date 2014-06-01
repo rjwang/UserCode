@@ -71,8 +71,14 @@ class RootConfig:
         gStyle.SetTitleAlign(13);
         gStyle.SetTextAlign(22);
 
+	#RJ
 	gStyle.SetPadTickX(1);                         
 	gStyle.SetPadTickY(1);  
+
+        gStyle.SetPadTopMargin(0.05);
+        gStyle.SetPadBottomMargin(0.13);
+        gStyle.SetPadLeftMargin(0.16);
+        gStyle.SetPadRightMargin(0.03);
                                                                             
 
 
