@@ -461,7 +461,7 @@ class PlotFlow:
             canvas.SetLogy()
 
         #RJ
-        T = TPaveText(0.1,0.995,0.9,0.95,'NDC')
+        T = TPaveText(0.1,0.995,0.5,0.95,'NDC')
         T.AddText('#bf{CMS} Simulation')
         T.SetTextFont(42)
         T.Draw("same")
@@ -474,11 +474,13 @@ class PlotFlow:
 
         # Displaying a legend
         if len(self.main.datasets)>1:
-            ymin_legend = .88-.055*len(histos)
+            ymin_legend = .95-.035*len(histos)
             if ymin_legend<0.1:
                 ymin_legend = 0.1
-            legend = TLegend(.65,ymin_legend,.88,.88)
-            legend.SetTextSize(0.05); 
+	    ymin_legend = 0.8
+            legend = TLegend(.65,ymin_legend,.95,.93)
+	    legend.SetNColumns(3);
+            #legend.SetTextSize(0.05); 
             legend.SetTextFont(42); 
             for ind in range(0,len(histos)):
                 legend.AddEntry(histos[ind],PlotFlow.NiceTitle(self.main.datasets[ind].title),"L")
