@@ -18,3 +18,4 @@ l+ = e+ mu+
 l- = e- mu-
 vl = ve vm vt
 vl~ = ve~ vm~ vt~
+invisible = 1009 -1009

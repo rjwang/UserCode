@@ -19,6 +19,10 @@
 #  You should have received a copy of the GNU General Public License
 #  along with MadAnalysis 5. If not, see <http://www.gnu.org/licenses/>
 #  
+#
+#  R.J. Wang. add output to rootfile
+#
+#
 ################################################################################
 
 
@@ -129,8 +133,12 @@ class PlotFlow:
 
     def DrawAll(self,mode,output_path):
 
+	from ROOT import TFile  #RJ
+
         # Reset Configuration
         RootConfig.Init()
+
+        myfile = TFile(output_path+'/selection.root','RECREATE')
 
         # Loop on each histo type
         irelhisto=0
@@ -150,12 +158,13 @@ class PlotFlow:
                  scales.append(1)
 
             # Draw
-            self.Draw(histos,scales,self.main.selection[iabshisto],irelhisto,mode,output_path,preview=False)
+            self.Draw(histos,myfile,scales,self.main.selection[iabshisto],irelhisto,mode,output_path,preview=False)
                 
             irelhisto+=1
 
+	myfile.Close()
 
-    def Draw(self,histos,scales,ref,irelhisto,mode,output_path,preview=False):
+    def Draw(self,histos,myfile,scales,ref,irelhisto,mode,output_path,preview=False):
 
         from ROOT import TH1
         from ROOT import TH1F
@@ -166,6 +175,7 @@ class PlotFlow:
         from ROOT import TASImage
         from ROOT import TAttImage
         from ROOT import TPad
+	from ROOT import TFile  #RJ
 
         # Creating a canvas
         PlotFlow.counter=PlotFlow.counter+1
@@ -471,7 +481,33 @@ class PlotFlow:
         T.SetLineColor(0)
         T.SetTextAlign(22)        
 
-
+	# Save all hists -- R.J. Wang
+        # Loop over datasets and histos
+        for ind in range(0,len(histos)):
+	    if not myfile.GetListOfKeys().Contains(PlotFlow.NiceTitle(self.main.datasets[ind].title)):
+	    	myfile.mkdir(PlotFlow.NiceTitle(self.main.datasets[ind].title))
+	    myfile.cd(PlotFlow.NiceTitle(self.main.datasets[ind].title))
+	    newhistosNAME = axis_titleX
+	    newhistosNAME = newhistosNAME.replace('(GeV/c^{2})','')
+	    newhistosNAME = newhistosNAME.replace('(GeV/c)','')
+	    newhistosNAME = newhistosNAME.replace(' ','')
+	    newhistosNAME = newhistosNAME.replace('+','')
+	    newhistosNAME = newhistosNAME.replace('-','')
+	    newhistosNAME = newhistosNAME.replace('[','')
+            newhistosNAME = newhistosNAME.replace(']','')
+	    newhistosNAME = newhistosNAME.replace('#it','')
+	    newhistosNAME = newhistosNAME.replace('#slashET','MET')
+	    newhistosNAME = newhistosNAME.replace('(GeV)','')
+	    newhistosNAME = newhistosNAME.replace('{','')
+	    newhistosNAME = newhistosNAME.replace('}','')
+	    newhistosNAME = newhistosNAME.replace('~','')
+	    newhistosNAME = newhistosNAME.replace('_','')
+	    #print newhistosNAME
+	    histos[ind].SetName(newhistosNAME)
+	    histos[ind].SetTitle(newhistosNAME)
+	    histos[ind].GetXaxis().SetTitle(axis_titleX) 
+	    histos[ind].Write()
+ 
         # Displaying a legend
         if len(self.main.datasets)>1:
             ymin_legend = .95-.035*len(histos)
